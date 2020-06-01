@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 module.exports = {
     server: {
-        port: process.env.ND_SERVER_PORT || 3000
+        port: process.env.SERVER_PORT || 3000
     }
 };
