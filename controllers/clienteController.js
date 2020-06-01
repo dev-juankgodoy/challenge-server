@@ -1,5 +1,13 @@
 const archivo = require('../utils/util');
 
+const mensajeError = {
+    msjError: ''
+}
+
+const mensajeExito = {
+    msgExito: 'Se ha registrado con exito'
+}
+
 const registraCliente = async (req, res, next) => {
 
     console.log('registraCliente INICIO');
@@ -18,9 +26,11 @@ const registraCliente = async (req, res, next) => {
         
     } catch (err) {
         console.error('Error al registrar cliente: ' + err);
+        mensajeError.msjError = 'Ha ocurrido un error en el servidor.';
+        res.status(500).send(mensajeError);
     }
 
-    res.status(201).send({msg: 'Se ha registrado con exito'});
+    res.status(201).send(mensajeExito);
 
     console.log('registraCliente FIN');
 }

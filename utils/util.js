@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const archivo = fs.createWriteStream('DatosCliente.txt', {
-    flags: 'a' // 'a' means appending (old data will be preserved)
+    flags: 'a' 
 });
 
 const registraDatos = (cliente) => {
